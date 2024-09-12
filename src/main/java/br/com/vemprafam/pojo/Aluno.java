@@ -6,19 +6,19 @@ public class Aluno {
 
 	private int ra;
 	private String nome;
-	private Date dataAdmissao;
-	private Double salario;
+	private Date dataNascimento;
+	private Double renda;
 	private String email;
 	public Aluno() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Aluno(int ra, String nome, Date dataAdmissao, Double salario, String email) {
+	public Aluno(int ra, String nome, Date dataNascimento, Double renda, String email) {
 		super();
 		this.ra = ra;
 		this.nome = nome;
-		this.dataAdmissao = dataAdmissao;
-		this.salario = salario;
+		this.dataNascimento = dataNascimento;
+		this.renda = renda;
 		this.email = email;
 	}
 	public int getRa() {
@@ -33,17 +33,17 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getDataAdmissao() {
-		return dataAdmissao;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
-	public void setDataAdmissao(Date dataAdmissao) {
-		this.dataAdmissao = dataAdmissao;
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
-	public Double getSalario() {
-		return salario;
+	public Double getRenda() {
+		return renda;
 	}
-	public void setSalario(Double salario) {
-		this.salario = salario;
+	public void setRenda(Double renda) {
+		this.renda = renda;
 	}
 	public String getEmail() {
 		return email;
@@ -53,9 +53,8 @@ public class Aluno {
 	}
 	@Override
 	public String toString() {
-		return "Aluno [ra=" + ra + ", nome=" + nome + ", dataAdmissao=" + dataAdmissao + ", salario=" + salario
+		return "Aluno [ra=" + ra + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", renda=" + renda
 				+ ", email=" + email + "]";
 	}
-
 
 }

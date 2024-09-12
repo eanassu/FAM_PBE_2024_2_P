@@ -30,8 +30,8 @@ public class DaoAluno {
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, aluno.getRa());
 			pstmt.setString(2, aluno.getNome());
-			pstmt.setDate(3, new java.sql.Date(aluno.getDataAdmissao().getTime()));
-			pstmt.setDouble(4, aluno.getSalario());
+			pstmt.setDate(3, new java.sql.Date(aluno.getDataNascimento().getTime()));
+			pstmt.setDouble(4, aluno.getRenda());
 			pstmt.setString(5, aluno.getEmail());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -56,8 +56,8 @@ public class DaoAluno {
 		try {
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, aluno.getNome());
-			pstmt.setDate(2, new java.sql.Date(aluno.getDataAdmissao().getTime()));
-			pstmt.setDouble(3, aluno.getSalario());
+			pstmt.setDate(2, new java.sql.Date(aluno.getDataNascimento().getTime()));
+			pstmt.setDouble(3, aluno.getRenda());
 			pstmt.setString(4, aluno.getEmail());
 			pstmt.setInt(5, aluno.getRa());
 			pstmt.executeUpdate();
