@@ -1,6 +1,7 @@
 package br.com.vemprafam.servlet;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -9,6 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import br.com.vemprafam.dao.DaoAluno;
+import br.com.vemprafam.pojo.Aluno;
 
 /**
  * Servlet implementation class ServletCadastro
@@ -33,8 +37,16 @@ public class ServletCadastro extends HttpServlet {
 		String nome = request.getParameter("nome");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataNascimento;
-		dataNascimento = dateFormat.parse(request.getParameter("dataNascimento"));
-
+		try {
+			dataNascimento = dateFormat.parse(request.getParameter("dataNascimento"));
+		} catch (ParseException e) {
+			dataNascimento = new Date();
+		}
+		double renda = Double.parseDouble(request.getParameter("renda"));
+		String email = request.getParameter("email");
+		Aluno aluno = new Aluno(ra,nome,dataNascimento,renda,email);
+		DaoAluno dao = new DaoAluno();
+		dao.inserir(aluno);
 	}
 
 	/**
